@@ -7,17 +7,24 @@ const Homepage = () => {
     <Wrapper>
       <Container>
         <Icons>
-
-        <Info>
-          <h1>Thalie Skoda</h1>
-          <p>Junior full stack web developer</p>
-        </Info>
-        <Icon>
-          <Span>{FiGithub}FiGithub</Span>
-          <Span>{FiLinkedin}FiLinkedin</Span>
-          <Span>{FiInstagram}FiInstagram</Span>
-          <Span>{FiMail}FiMail</Span>
-          </Icon>
+          <Info>
+            <h1>Thalie Skoda</h1>
+            <p>Junior full stack web developer</p>
+          </Info>
+          <ContainerIcon>
+            <Icon>
+              <FiGithub />
+            </Icon>
+            <Icon>
+              <FiLinkedin />
+            </Icon>
+            <Icon>
+              <FiInstagram />
+            </Icon>
+            <Icon>
+              <FiMail />
+            </Icon>
+          </ContainerIcon>
         </Icons>
 
         <Img src={profilePicture} alt="profile picture" />
@@ -26,19 +33,31 @@ const Homepage = () => {
   );
 };
 
-const Span = styled.span`
-padding:30px;
-`
+const Icon = styled.span`
+  margin: 30px;
+  padding: 10px;
+  font-size: 25px;
+  transition: transform 0.2s;
+  background-color: rgb(221, 238, 237);
+  border-radius: 10%;
+  box-shadow: 5px 5px 0px 0px rgb(232, 222, 219, 0.7);
 
-const Icon = styled.div`
-display:flex;
-flex-direction:row;
-justify-content:space-around;
-`
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+
+    box-shadow: 6px 6px 0px 0px rgb(232, 222, 219, 0.7);
+  }
+`;
+const ContainerIcon = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 const Icons = styled.div`
-display:flex;
-flex-direction:column;
-`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Info = styled.div`
   display: flex;
@@ -53,14 +72,15 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 90vh;
+  align-items:center;
 `;
 const Img = styled.img`
   border-radius: 10%;
   width: 500px;
-  height: 500px;
+  height: 700px;
   object-fit: none;
-  object-position: 50% 30%;
+  object-position: 50% 25%;
   filter: grayscale(100%);
 `;
 export default Homepage;

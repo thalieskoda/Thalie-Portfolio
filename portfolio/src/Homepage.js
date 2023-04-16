@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiInstagram, FiMail } from "react-icons/fi";
 import profilePicture from "./images/IMG_1506.jpg";
 
@@ -27,11 +28,25 @@ const Homepage = () => {
           </ContainerIcon>
         </Icons>
 
-        <Img src={profilePicture} alt="profile picture" />
+        <MotionImg
+          initial={{ x: -100 }}
+          animate={{ x: 0 }}
+          src={profilePicture}
+          alt="profile picture"
+        />
       </Container>
     </Wrapper>
   );
 };
+
+const MotionImg = motion.custom(styled.img)`
+  border-radius: 10%;
+  width: 500px;
+  height: 700px;
+  object-fit: none;
+  object-position: 50% 25%;
+  filter: grayscale(100%);
+`;
 
 const Icon = styled.span`
   margin: 30px;
@@ -73,14 +88,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   height: 90vh;
-  align-items:center;
+  align-items: center;
 `;
-const Img = styled.img`
-  border-radius: 10%;
-  width: 500px;
-  height: 700px;
-  object-fit: none;
-  object-position: 50% 25%;
-  filter: grayscale(100%);
-`;
+
 export default Homepage;

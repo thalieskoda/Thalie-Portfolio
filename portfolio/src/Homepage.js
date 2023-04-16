@@ -14,22 +14,30 @@ const Homepage = () => {
           </Info>
           <ContainerIcon>
             <Icon>
-              <FiGithub />
+              <A href="https://github.com/thalieskoda" target="_blank">
+                <FiGithub />
+              </A>
             </Icon>
             <Icon>
-              <FiLinkedin />
+              <A href="https://www.linkedin.com/in/thalie-skoda-440451207/" target="_blank">
+                <FiLinkedin />
+              </A>
             </Icon>
             <Icon>
-              <FiInstagram />
+              <A href="https://www.instagram.com/thalieskoda/" target="_blank">
+                <FiInstagram />
+              </A>
             </Icon>
             <Icon>
-              <FiMail />
+              <A href="mailto:thalieskoda@hotmail.com">
+                <FiMail />
+              </A>
             </Icon>
           </ContainerIcon>
         </Icons>
 
-        <MotionImg
-          initial={{ x: -100 }}
+        <Img
+          initial={{ x: -200 }}
           animate={{ x: 0 }}
           src={profilePicture}
           alt="profile picture"
@@ -39,7 +47,12 @@ const Homepage = () => {
   );
 };
 
-const MotionImg = motion.custom(styled.img)`
+const A = styled.a`
+color:black;
+text-decoration: none;
+`
+
+const Img = styled(motion.img)`
   border-radius: 10%;
   width: 500px;
   height: 700px;
@@ -48,7 +61,8 @@ const MotionImg = motion.custom(styled.img)`
   filter: grayscale(100%);
 `;
 
-const Icon = styled.span`
+const Icon = styled.div`
+  color: black;
   margin: 30px;
   padding: 10px;
   font-size: 25px;

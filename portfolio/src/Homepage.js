@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiInstagram, FiMail } from "react-icons/fi";
 import profilePicture from "./images/IMG_1506.jpg";
+import Projects from "./Projects";
+import About from "./About";
+import Contact from "./Contact";
 
 const Homepage = () => {
   return (
+    <>
     <Wrapper>
       <Container>
         <Icons>
@@ -44,6 +48,10 @@ const Homepage = () => {
         />
       </Container>
     </Wrapper>
+    <About/>
+    <Projects/>
+    <Contact/>
+    </>
   );
 };
 
@@ -101,7 +109,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 90vh;
+  height: 100vh;
   align-items: center;
 `;
 

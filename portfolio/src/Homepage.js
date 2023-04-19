@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import GlobalStyles from "./GlobalStyles";
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiInstagram, FiMail } from "react-icons/fi";
 import profilePicture from "./images/IMG_1506.jpg";
@@ -9,56 +10,102 @@ import Contact from "./Contact";
 const Homepage = () => {
   return (
     <>
-    <Wrapper>
-      <Container>
-        <Icons>
-          <Info>
-            <h1>Thalie Skoda</h1>
-            <p>Junior full stack web developer</p>
-          </Info>
-          <ContainerIcon>
-            <Icon>
-              <A href="https://github.com/thalieskoda" target="_blank">
-                <FiGithub />
-              </A>
-            </Icon>
-            <Icon>
-              <A href="https://www.linkedin.com/in/thalie-skoda-440451207/" target="_blank">
-                <FiLinkedin />
-              </A>
-            </Icon>
-            <Icon>
-              <A href="https://www.instagram.com/thalieskoda/" target="_blank">
-                <FiInstagram />
-              </A>
-            </Icon>
-            <Icon>
-              <A href="mailto:thalieskoda@hotmail.com">
-                <FiMail />
-              </A>
-            </Icon>
-          </ContainerIcon>
-        </Icons>
+      <Wrapper>
+        <Container>
+          <Icons>
+            <Info>
+              <h1>Thalie Skoda</h1>
+              <p>Junior full stack web developer</p>
+            </Info>
+            <ContainerIcon>
+              <Icon
+                initial={{ x: -400, rotate: -180 }}
+                animate={{ x: 0, rotate: 0 }}
+                drag
+                dragConstraints={{ top: 100, left: 100, right: 100, bottom: 100 }}
+                whileDrag={{
+                  scale: 1.2,
+                  zIndex: 999,
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                }}
+              >
+                <A href="https://github.com/thalieskoda" target="_blank">
+                  <FiGithub />
+                </A>
+              </Icon>
+              <Icon
+                initial={{ x: -400, rotate: -180 }}
+                animate={{ x: 0, rotate: 0 }}
+                drag
+                dragConstraints={{ top: 10, left: 10, right: 100, bottom: 100 }}
+                whileDrag={{
+                  scale: 1.2,
+                  zIndex: 999,
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                }}
+              >
+                <A
+                  href="https://www.linkedin.com/in/thalie-skoda-440451207/"
+                  target="_blank"
+                >
+                  <FiLinkedin />
+                </A>
+              </Icon>
+              <Icon
+                initial={{ x: -400, rotate: -180 }}
+                animate={{ x: 0, rotate: 0 }}
+                drag
+                dragConstraints={{ top: 10, left: 10, right: 100, bottom: 100 }}
+                whileDrag={{
+                  scale: 1.2,
+                  zIndex: 999,
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                }}
+              >
+                <A
+                  href="https://www.instagram.com/thalieskoda/"
+                  target="_blank"
+                >
+                  <FiInstagram />
+                </A>
+              </Icon>
+              <Icon
+                initial={{ x: -400, rotate: -180 }}
+                animate={{ x: 0, rotate: 0 }}
+                drag
+                dragConstraints={{ top: 10, left: 10, right: 100, bottom: 100 }}
+                whileDrag={{
+                  scale: 1.2,
+                  zIndex: 999,
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                }}
+              >
+                <A href="mailto:thalieskoda@hotmail.com">
+                  <FiMail />
+                </A>
+              </Icon>
+            </ContainerIcon>
+          </Icons>
 
-        <Img
-          initial={{ x: -200 }}
-          animate={{ x: 0 }}
-          src={profilePicture}
-          alt="profile picture"
-        />
-      </Container>
-    </Wrapper>
-    <About/>
-    <Projects/>
-    <Contact/>
+          <Img
+            initial={{ x: -1000 }}
+            animate={{ x: 0 }}
+            src={profilePicture}
+            alt="profile picture"
+          />
+        </Container>
+      </Wrapper>
+      <About />
+      <Projects />
+      <Contact />
     </>
   );
 };
 
 const A = styled.a`
-color:black;
-text-decoration: none;
-`
+  color: black;
+  text-decoration: none;
+`;
 
 const Img = styled(motion.img)`
   border-radius: 10%;
@@ -67,9 +114,14 @@ const Img = styled(motion.img)`
   object-fit: none;
   object-position: 50% 25%;
   filter: grayscale(100%);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  &:hover {
+    filter: grayscale(0);
+    transition: 1s;
+  }
 `;
 
-const Icon = styled.div`
+const Icon = styled(motion.div)`
   color: black;
   margin: 30px;
   padding: 10px;
@@ -77,13 +129,11 @@ const Icon = styled.div`
   transition: transform 0.2s;
   background-color: rgb(221, 238, 237);
   border-radius: 10%;
-  box-shadow: 5px 5px 0px 0px rgb(232, 222, 219, 0.7);
-
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
-
-    box-shadow: 6px 6px 0px 0px rgb(232, 222, 219, 0.7);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   }
 `;
 const ContainerIcon = styled.div`
@@ -111,7 +161,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   height: 100vh;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 `;
 
 export default Homepage;

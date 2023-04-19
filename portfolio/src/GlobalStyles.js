@@ -5,8 +5,8 @@ const GlobalStyles = createGlobalStyle`
     --color-main-background: #fff;
     --color-secondary: #edf0f2;
     --color-accent: #ceff1a;
-    --font-heading: 'Alegreya Sans', Arial, Helvetica, sans-serif;
-    --font-body: 'Poppins', Arial, Helvetica, sans-serif;
+    --font-heading: 'Poppins', Arial, Helvetica, sans-serif;
+    --font-body: 'Alegreya Sans', Arial, Helvetica, sans-serif;
   }
 
   /* Reset styles */
@@ -47,15 +47,15 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-    font-size: 2em;
-    font-weight:100;
-    color:lightgrey;
+  font-size: 2em;
+  font-weight: 100;
+  transition: 1s ease-out;
 
-    &:hover{
-        color:black;
-        transition:1s;
-    }
+  &:hover {
+    font-size: 2.2em;
+    transition: 1s ease-in-out;
   }
+}
 
 
   /* Links */

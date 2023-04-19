@@ -5,6 +5,7 @@ import future from "./images/future-fit.png"
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
 const Projects = () => {
+  const [ref0, inView0] = useInView({ threshold: 0.2 });
   const [ref1, inView1] = useInView({ threshold: 0.2 });
   const [ref2, inView2] = useInView({ threshold: 0.3 });
 
@@ -21,8 +22,14 @@ const Projects = () => {
   };
   return (
     <>
-      <h1>Projects</h1>
       <AnimatePresence>
+        <Section>
+      <H1  ref={ref0}
+          initial={{ x: 0, opacity: 0 }}
+          animate={inView0 ? "visible" : "hiddenLeft"}
+          variants={variants}
+          transition={{ duration: 0.5 }}
+          exit="exit">Projects</H1>
       <Wrapper key={1}>
         <Container
           ref={ref1}
@@ -88,11 +95,19 @@ const Projects = () => {
           </InfoContainer>
         </Container>
       </Wrapper>
+      </Section>
       </AnimatePresence>
+  
     </>
   );
 };
 
+const H1 = styled(motion.h1)`
+margin: 0 0 40px 0;
+`
+const Section = styled.section`
+text-align:center;
+`
 const Description =styled.p`
 font-weight:100;
 `
@@ -140,7 +155,7 @@ const LinkToRepo = styled.a`
 `;
 const Title = styled.h1``;
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
 `;

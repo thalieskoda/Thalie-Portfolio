@@ -12,6 +12,7 @@ const Homepage = () => {
   return (
     <>
     <GlobalStyles/>
+              <H1>Thalie Skoda</H1>
       <Wrapper>
         <Container>
           <Icons>
@@ -30,6 +31,10 @@ const Homepage = () => {
                   zIndex: 999,
                   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
                 }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2 },
+                }}
               >
                 <A href="https://github.com/thalieskoda" target="_blank">
                   <FiGithub />
@@ -44,6 +49,10 @@ const Homepage = () => {
                   scale: 1.2,
                   zIndex: 999,
                   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2 },
                 }}
               >
                 <A
@@ -63,6 +72,10 @@ const Homepage = () => {
                   zIndex: 999,
                   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
                 }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2 },
+                }}
               >
                 <A
                   href="https://www.instagram.com/thalieskoda/"
@@ -80,6 +93,10 @@ const Homepage = () => {
                   scale: 1.2,
                   zIndex: 999,
                   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2 },
                 }}
               >
                 <A href="mailto:thalieskoda@hotmail.com">
@@ -103,7 +120,15 @@ const Homepage = () => {
     </>
   );
 };
-
+const H1 = styled.h1`
+z-index:-1
+font-size:50px;
+opacity:0.2;
+font-size:100px;
+position:relative;
+top:300px;
+left:80px;
+`
 const A = styled.a`
   color: black;
   text-decoration: none;
@@ -112,7 +137,7 @@ const A = styled.a`
 const Img = styled(motion.img)`
   border-radius: 10px;
   width: 500px;
-  height: 700px;
+  height: 90vh;
   object-fit: none;
   object-position: 50% 25%;
   filter: grayscale(100%);
@@ -132,11 +157,7 @@ const Icon = styled(motion.div)`
   background-color: rgb(221, 238, 237);
   border-radius: 10%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  }
+  cursor: pointer;
 `;
 const ContainerIcon = styled.div`
   display: flex;
@@ -164,6 +185,8 @@ const Wrapper = styled.div`
   height: 100vh;
   align-items: center;
   font-family: "Poppins", sans-serif;
+  align-items: center;
+
 `;
 
 export default Homepage;

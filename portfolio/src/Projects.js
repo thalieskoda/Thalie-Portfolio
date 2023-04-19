@@ -9,8 +9,8 @@ const Projects = () => {
   const [ref2, inView2] = useInView({ threshold: 0.3 });
 
   const variants = {
-    hiddenLeft: { y: 400 },
-    hiddenRight: { y: 600 },
+    hiddenLeft: { x: -600 },
+    hiddenRight: { x: 600 },
     visible: {
       x: 0,
       opacity: 1,
@@ -18,13 +18,6 @@ const Projects = () => {
         duration: 0.3,
       },
     },
-    exit: {
-      opacity: 0,
-      y: 100,
-      transition: {
-        duration: 0.2,
-      },
-    }
   };
   return (
     <>
@@ -148,7 +141,6 @@ const LinkToRepo = styled.a`
 const Title = styled.h1``;
 const Wrapper = styled.div`
   height: 100vh;
-
   display: flex;
   justify-content: center;
 `;

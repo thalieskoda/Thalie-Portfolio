@@ -25,7 +25,7 @@ const About = () => {
   };
   return (
     <Wrapper initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <h1>About me</h1>
+      
       <Container
         ref={ref1}
         initial={{ x: -600, opacity: 0 }}
@@ -69,13 +69,14 @@ const About = () => {
           {" "}
           As I started working, I realized that my true passion lay in the tech
           industry. I love learning and growing, so I decided to pivot from
-          customer service to website design. I find designing websites
-          endlessly satisfying, and I'm always up for a good challenge. Even
-          though I switched careers, the communication and problem-solving
-          skills I developed in customer service have been invaluable to me as a
-          designer. I'm always eager to take on new tasks and go above and
-          beyond to deliver the best results. Thanks for taking the time to get
-          to know me, and I'm excited for the chance to work with you!
+          customer service to web development. I find coding websites and web
+          applications endlessly satisfying, and I'm always up for a good
+          challenge. Even though I switched careers, the communication and
+          problem-solving skills I developed in customer service have been
+          invaluable to me as a developer. I'm always eager to take on new tasks
+          and go above and beyond to deliver the best results. Thanks for taking
+          the time to get to know me, and I'm excited for the chance to work
+          with you!
         </P>
         <Img src={picture3} alt="with my cat Naïla" />
       </Container>
@@ -98,12 +99,13 @@ const Container = styled(motion.div)`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin:0 0 30px 0;
 `;
 const P = styled.p`
   border: 1px black solid;
   border-radius: 10px;
   align-items: center;
-  width: 50vw;
+  width: 60vw;
   padding: 10vh;
   font-family: "Poppins", sans-serif;
   font-size: 20px;

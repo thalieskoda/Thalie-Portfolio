@@ -8,8 +8,10 @@ import About from "./About";
 import Contact from "./Contact";
 
 const Homepage = () => {
+  
   return (
     <>
+    <GlobalStyles/>
       <Wrapper>
         <Container>
           <Icons>
@@ -86,10 +88,10 @@ const Homepage = () => {
               </Icon>
             </ContainerIcon>
           </Icons>
-
           <Img
             initial={{ x: -1000 }}
             animate={{ x: 0 }}
+            transition={{ duration: 0.5 }}
             src={profilePicture}
             alt="profile picture"
           />
@@ -108,7 +110,7 @@ const A = styled.a`
 `;
 
 const Img = styled(motion.img)`
-  border-radius: 10%;
+  border-radius: 10px;
   width: 500px;
   height: 700px;
   object-fit: none;

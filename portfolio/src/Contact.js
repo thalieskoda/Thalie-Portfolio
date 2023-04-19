@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 display:flex;
 flex-direction:column;  
 justify-content:space-evenly;
-height:60vh;
+height:100vh;
 align-items:center;
 `
 export default Contact

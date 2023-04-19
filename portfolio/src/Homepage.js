@@ -111,6 +111,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   height: 100vh;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
 `;
 
 export default Homepage;

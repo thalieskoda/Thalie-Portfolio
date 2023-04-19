@@ -12,7 +12,6 @@ const Homepage = () => {
   return (
     <>
     <GlobalStyles/>
-              <H1>Thalie Skoda</H1>
       <Wrapper>
         <Container>
           <Icons>
@@ -120,15 +119,7 @@ const Homepage = () => {
     </>
   );
 };
-const H1 = styled.h1`
-z-index:-1
-font-size:50px;
-opacity:0.2;
-font-size:100px;
-position:relative;
-top:300px;
-left:80px;
-`
+
 const A = styled.a`
   color: black;
   text-decoration: none;

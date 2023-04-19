@@ -48,6 +48,13 @@ const GlobalStyles = createGlobalStyle`
 
   h2 {
     font-size: 2em;
+    font-weight:100;
+    color:lightgrey;
+
+    &:hover{
+        color:black;
+        transition:1s;
+    }
   }
 
 
@@ -63,21 +70,20 @@ const GlobalStyles = createGlobalStyle`
 
   /* Buttons */
   button {
-    background-color:#10355f;
-    color: white;
+    color:black;
     cursor: pointer;
     font-size: 1em;
     font-weight: 100;
     padding: 10px;
     transition: all 0.3s ease;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    border: 1px black solid;
-    width:150px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(-100deg, rgba(154, 154, 154, 0.5), rgba(192, 193, 191, 0.5), rgba(240, 240, 240, 0.5), rgba(255, 255, 255, 0.5));
+    border: 1px black lightgrey;
+    width:50vw;
     border-radius:5px;
 
     &:hover {
         background-color:transparent;
-        color:#10355f;
         transition:0.5s;
     }
   }
@@ -105,6 +111,11 @@ const GlobalStyles = createGlobalStyle`
     font-weight: bold;
   }
 
+title {
+    font-weight:100;
+    color:black;
+    font-size:3em;
+}
 `;
 
 export default GlobalStyles;
